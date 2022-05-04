@@ -1,0 +1,4 @@
+gunicorn
+tensorflow-cpu==2.8.0
+numpy
+flask

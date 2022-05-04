@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/index.css">
+        <title>COVID-19 Pneumonia Explainable Artificial Intelligence</title>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4" id="jumbotron_1">COVID-19 Pneumonia Explainable Artificial Intelligence</h1>
+              <p class="lead"></p>
+            </div>
+        </div>
+
+        <div class=".navbar .navbar-expand{-sm|-md|-lg|-xl}">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+                <!-- Navbar content -->
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="custom.html">Custom Data</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Methods</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Model</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Analysis</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Conclusion</a>
+                      </li>
+                    </ul>
+                  </div>
+              </nav>
+        </div>
+
+        <div class="container-md">
+          <h1 class="h1-style">Heading</h1>
+          <p class = "p-style">
+              Upload zip file of images and train your own model.
+          </p>
+        </div>
+        <br>
+        <!-- MAKE PREDICTIONS WITH MODEL -->
+        <div>
+            <h2>Predictions</h2>
+            <p>Upload a zip file to train model.</p>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="zip" id="zip" class="btn btn-block"/>
+                </br>
+                </br>
+                <button type="submit" value="Submit" class="btn btn-primary btn-block btn-large">Upload and Train</button>
+            </form>
+            <br>
+            <br>
+            {{ prediction_text }}
+        </div>
+    </body>
+</html>

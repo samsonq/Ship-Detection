@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/index.css">
+        <title>Coast Surveillance Ship Detection (15.S04 Final Project)</title>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4" id="jumbotron_1">Coast Surveillance Ship Detection (15.S04 Final Project)</h1>
+              <p class="lead"></p>
+            </div>
+        </div>
+        <div class="container-md">
+          <h1 class="h1-style">Overview</h1>
+          <p class = "p-style">hii</p>
+            <p class = "p-style">hello</p>
+            <p class = "p-style">hey</p>
+        </div>
+        <br>
+        <!-- MAKE PREDICTIONS WITH MODEL -->
+        <div>
+            <h2>Predictions</h2>
+            <p>Upload an image to make a prediction.</p>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="image" class="btn btn-block"/>
+                <br>
+                <br>
+                <button type="submit" value="Submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+            <p>The predicted class is:</p>
+            {{ prediction_text }}
+            <br>
+            <br>
+            {% if filename %}
+                <div>
+                    <img src="{{ url_for('display_image', filename=filename) }}" alt="User Image">
+                </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
